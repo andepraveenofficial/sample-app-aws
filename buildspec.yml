@@ -10,7 +10,6 @@ phases:
   pre_build:
     commands:
       - echo Running pre-build phase...
-      - npm run lint # Optional: Add if you have linting setup
   build:
     commands:
       - echo Building the React app...
