@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16 # Specify the Node.js version; adjust as needed
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Running pre-build phase...
+      - npm run lint # Optional: Add if you have linting setup
+  build:
+    commands:
+      - echo Building the React app...
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed. Preparing files for deployment...
+
+artifacts:
+  files:
+    - '**/*' # Include all files in the build directory
+  base-directory: build # Specify the build directory for React (default is 'build')
+  discard-paths: no
